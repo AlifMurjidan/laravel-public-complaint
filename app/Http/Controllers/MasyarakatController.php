@@ -37,7 +37,26 @@ class MasyarakatController extends Controller
         // $pengaduan->foto = $request->foto;
         // $pengaduan->save();
 
-        $pengaduan = Pengaduan::create($request->all());
+        
+        $this->validate($request, [
+            'tgl_pengaduan'     => 'required',
+            'nik'               => 'required',
+            'isi_laporan'       => 'required',
+            'foto'              => 'required|image|mimes:jpeg,png,jpg',
+            
+        ]);
+
+        $image = $request->file('foto');
+        $image->storeAs('public/images', $image->hashName());
+        
+        $pengaduan = Pengaduan::create([
+            'tgl_pengaduan'     => $request->tgl_pengaduan,
+            'nik'               => $request->nik,
+            'isi_laporan'       => $request->isi_laporan,
+            'foto'              => $image->hashName()
+        ]);
+
+        // $pengaduan = Pengaduan::create($request->all());
         return redirect('/masyarakat/pengaduan');
        
     }
@@ -52,7 +71,23 @@ class MasyarakatController extends Controller
     {
         $pengaduan = Pengaduan::findOrFail($id);
         // dd($pengaduan);
-        $pengaduan->update($request->all());
+        $this->validate($request, [
+            'tgl_pengaduan'     => 'required',
+            'nik'               => 'required',
+            'isi_laporan'       => 'required',
+            'foto'              => 'required|image|mimes:jpeg,png,jpg',
+            
+        ]);
+
+        $image = $request->file('foto');
+        $image->storeAs('public/images', $image->hashName());
+        // $pengaduan->update($request->all());
+        $pengaduan->update([
+            'tgl_pengaduan'     => $request->tgl_pengaduan,
+            'nik'               => $request->nik,
+            'isi_laporan'       => $request->isi_laporan,
+            'foto'              => $image->hashName()
+        ]);
 
         return redirect()->route('masyarakat.dashboard');
     }

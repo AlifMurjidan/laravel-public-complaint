@@ -15,7 +15,7 @@
                 <td>NIK : <?= $pengaduan->nik ?></td><br>
                 <td>Laporan : <?= $pengaduan->isi_laporan ?></td><br>
                 <td>Foto : </td><br>
-                {{-- <img src='../../img/<?= $pengaduan->foto;?>' width='1000'><br> --}}
+                <td><img src="{{ Storage::url('public/images/').$pengaduan->foto }}" class="rounded" style="width: 1200px"></td><br>
                 <td>Status : <?php if ($pengaduan->status == 0) : ?>
                     Belum diproses
                 <?php elseif ($pengaduan->status == 'proses') : ?>

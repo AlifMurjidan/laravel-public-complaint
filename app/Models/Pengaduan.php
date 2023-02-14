@@ -16,6 +16,7 @@ class Pengaduan extends Model
         'nik',
         'isi_laporan',
         'foto',
+        'status',
     ];
 
 }

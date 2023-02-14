@@ -9,15 +9,15 @@
 <body>
     <h4 class="display-5 mb-4">TAMBAH DATA</h4>
     <hr class="heigth: 10px;">
-    <form action="/masyarakat" method="post">
+    <form action="{{ route('masyarakat.store') }}" method="post" enctype="multipart/form-data">
     @csrf
         <label for="tgl_pengaduan">Tanggal</label><br>
         <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan"><br>
         <label for="nik">NIK</label><br>
         <input type="text" class="form-control" name="nik" id="nik"><br>
-        <label for="location">Laporan</label><br>
+        <label for="isi_laporan">Laporan</label><br>
         <input type="text" class="form-control" name="isi_laporan" id="isi_laporan"><br>
-        <label for="temperature">Foto</label><br>
+        <label for="foto">Foto</label><br>
         <input type="file" class="form-control" name="foto" id="foto"><br>
         <br>
         <button type="submit">Save</button>
