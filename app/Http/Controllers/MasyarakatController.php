@@ -81,13 +81,15 @@ class MasyarakatController extends Controller
         //     'tgl_pengaduan'     => 'required',
         //     'nik'               => 'required',
         //     'isi_laporan'       => 'required',
-        //     'foto'              => 'required|image|mimes:jpeg,png,jpg',
+        //     'foto'              => 'image|mimes:jpeg,png,jpg',
             
         // ]);
+        
+        // // if ($request->hasFile('foto')) {
 
         // $image = $request->file('foto');
         // $image->storeAs('public/images', $image->hashName());
-        // $pengaduan->update($request->all());
+       
         $pengaduan->update([
             'tgl_pengaduan'     => date("Y-m-d H:i:s"),
             'nik'               => $request->nik,
@@ -95,6 +97,14 @@ class MasyarakatController extends Controller
             // 'foto'              => $image->hashName()
         ]);
 
+    // } else {
+    //     $pengaduan->update([
+    //         'tgl_pengaduan'     => date("Y-m-d H:i:s"),
+    //         'nik'               => $request->nik,
+    //         'isi_laporan'       => $request->isi_laporan
+    //     ]);
+    // }
+        // $pengaduan->update($request->all());
         return redirect()->route('masyarakat.pengaduan');
     }
 

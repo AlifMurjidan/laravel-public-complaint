@@ -22,12 +22,12 @@
             <input type="text" class="form-control" name="isi_laporan" id="isi_laporan" value="{{$pengaduan->isi_laporan}}"><br>
             <label for="foto">Foto :</label><br>
             {{-- <img src="../../img/<?=$pengaduan->foto; ?>" width="1000"/><br> --}}
-            @if ($pengaduan->foto)
+            {{-- @if ($pengaduan->foto) --}}
             <img src="{{ Storage::url('public/images/').$pengaduan->foto }}" class="rounded" style="width: 1200px"></td><br>
-            @else
+            {{-- @else
             <span>Tidak ada foto</span>
             @endif
-            {{-- <input type="file" @error('foto') 
+            <input type="file" @error('foto') 
             @enderror name="foto" id="foto" value="{{$pengaduan->foto}}" width="100"><br>
             @error('foto')
                 <div class="invalid-feedback">

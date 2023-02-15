@@ -22,23 +22,23 @@
             <input type="text" class="form-control" name="isi_laporan" id="isi_laporan" value="{{$pengaduan->isi_laporan}}"><br>
             <label for="foto">Foto :</label><br>
             <img src="{{ Storage::url('public/images/').$pengaduan->foto }}" class="rounded" style="width: 500px"></td><br>
-            <label for="">Status</label>
+            <label for="">Status :</label>
                   <select class="form-control" name="status">
                     <?php if ($pengaduan['status'] == "0") { ?>
                         <option selected value="0">Belum Dibaca</option>
-                        <option value="Proses">Proses</option>
-                        <option value="Selesai">Selesai</option>
-                    <?php }else if($konten['status'] == "Proses") { ?>
+                        <option value="proses">Sedang diproses</option>
+                        <option value="selesai">Selesai diproses</option>
+                    <?php }else if($pengaduan['status'] == "proses") { ?>
                         <option value="0">Belum Dibaca</option>
-                        <option selected value="Proses">Proses</option>
-                        <option value="Selesai">Selesai</option>
+                        <option selected value="proses">Sedang diproses</option>
+                        <option value="selesai">Selesai diproses</option>
                     <?php }else { ?>
                         <option value="0">Belum Dibaca</option>
-                        <option value="Proses">Proses</option>
-                        <option selected value="Selesai">Selesai</option>
+                        <option value="proses">Sedang diproses</option>
+                        <option selected value="selesai">Selesai diproses</option>
                     <?php } ?>
                   </select>
-            <br>
+            <br><hr>
             <button type="submit">Update</button>
         </form>
 </body>
