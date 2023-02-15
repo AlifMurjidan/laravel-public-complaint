@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Petugas extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'level',
+        'user_id'
+    ];
 }

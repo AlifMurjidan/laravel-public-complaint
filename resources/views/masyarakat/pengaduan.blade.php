@@ -42,11 +42,6 @@
 
                     <br>
                     <a href="{{ route('masyarakat.detail', $data->id)}}" style="color :#000000">Detail</a><br>
-                    <form action="/masyarakat/delete/{{$data->id}}" method="post">
-                        @method('delete')
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
                     <hr>
                 </tr>
                 @endforeach

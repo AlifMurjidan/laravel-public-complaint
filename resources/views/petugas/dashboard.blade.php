@@ -18,7 +18,7 @@
             <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
                 <small>MENU UTAMA</small>
             </li>
-            <a href="" data-toggle="collapse" aria-expanded="false" class="bg-white list-group-item list-group-item-action flex-column align-items-start">
+            <a href="/petugas/dashboard" data-toggle="collapse" aria-expanded="false" class="bg-white list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="menu-collapsed">Dashboard</span>
                 </div>
@@ -26,19 +26,19 @@
             <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
                 <small>OPTIONS</small>
             </li>
-            <a href="" class="bg-white list-group-item list-group-item-action">
+            {{-- <a href="/petugas/masyarakat" class="bg-white list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="menu-collapsed">Masyarakat</span>
                 </div>
-            </a>
+            </a> --}}
 
-            <a href="" class="bg-white list-group-item list-group-item-action">
+            <a href="/petugas/admin" class="bg-white list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="menu-collapsed">Petugas</span>
                 </div>
             </a>
             
-            <a href="" class="bg-white list-group-item list-group-item-action">
+            <a href="/petugas/report" class="bg-white list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="menu-collapsed">Pengaduan</span>
                 </div>
@@ -49,7 +49,7 @@
         <h4 class="display-5 mb-4"><i class="fas fa-tachometer-alt mr-2"></i> DASHBOARD</h4>
           <hr class="heigth: 10px;">
           <div class="row text-black">
-          <div class="shadow-lg p-3 mb-5 ml-4 bg-body rounded"  style="width: 18rem;">
+          {{-- <div class="shadow-lg p-3 mb-5 ml-4 bg-body rounded"  style="width: 18rem;">
               <div class="card-body overview-item--c1">
                 <div class="card-body-icon">
                 </div>
@@ -59,7 +59,7 @@
                 </div>
                 <a href=""><p class="card-text text-black">Lihat Detail</p></a>
               </div>
-            </div> 
+            </div>  --}}
             
             <div class="shadow-lg p-3 mb-5 ml-4 bg-body rounded"  style="width: 18rem;">
               <div class="card-body overview-item--c2">
@@ -68,7 +68,7 @@
                 <h5 class="card-title">PETUGAS</h5>
                 <div class="display-4">
                 </div>
-                <a href=""><p class="card-text text-black">Lihat Detail</p></a>
+                <a href="/petugas/admin"><p class="card-text text-black">Lihat Detail</p></a>
               </div>
             </div> 
             
@@ -80,18 +80,18 @@
                 <div class="display-4">
                 
                 </div>
-                <a href=""><p class="card-text text-black">Lihat Detail</p></a>
+                <a href="/petugas/report"><p class="card-text text-black">Lihat Detail</p></a>
               </div>
             </div> 
           </div>
           
         </div>
     </div><!-- Main Col END -->
+    <form action="{{ route('logout') }}" method="post">
+        @csrf
+        <input type="submit" value="Keluar">
+    </form>
 </div><!-- body-row END -->
 </div>
-<form action="{{ route('logout') }}" method="post">
-    @csrf
-    <input type="submit" value="Keluar">
-</form> 
 </body>
 </html>

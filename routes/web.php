@@ -32,12 +32,29 @@ Route::get('/masyarakat/pengaduan', function () {
     return view('/masyarakat/pengaduan');
 });
 
+Route::get('/petugas/dashboard', function () {
+    return view('/petugas/dashboard');
+});
+
+// Route::get('/petugas/masyarakat', function () {
+//     return view('/petugas/masyarakat');
+// });
+
+Route::get('/petugas/admin', function () {
+    return view('/petugas/admin');
+});
+
+Route::get('/petugas/report', function () {
+    return view('/petugas/report');
+});
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('auth');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Route Masyarakat
-Route::get('/masyarakat/pengaduan', [MasyarakatController::class, 'index'])->name('masyarakat.dashboard');
+Route::get('/masyarakat/', [MasyarakatController::class, 'index'])->name('masyarakat.dashboard');
+Route::get('/masyarakat/pengaduan', [MasyarakatController::class, 'tampilpengaduan'])->name('masyarakat.pengaduan');
 Route::get('/masyarakat/detail/{id_pengaduan}', [MasyarakatController::class, 'show'])->name('masyarakat.detail');
 Route::get('/masyarakat/add', [MasyarakatController::class, 'create'])->name('masyarakat.create');
 Route::post('/masyarakat', [MasyarakatController::class, 'store'])->name('masyarakat.store');
@@ -46,4 +63,8 @@ Route::put('/masyarakat/{id_pengaduan}', [MasyarakatController::class, 'update']
 Route::delete('/masyarakat/delete/{id_pengaduan}', [MasyarakatController::class, 'destroy']);
 
 // Route Petugas
-Route::get('/petugas', [PetugasController::class, 'index'])->name('petugas.dashboard');
+Route::get('/petugas/', [PetugasController::class, 'index'])->name('petugas.dashboard');
+Route::get('/petugas/report', [PetugasController::class, 'tampilpengaduan'])->name('petugas.report');
+Route::get('/petugas/edit/{id_pengaduan}', [PetugasController::class, 'edit'])->name('petugas.edit');
+Route::put('/petugas/{id_pengaduan}', [PetugasController::class, 'update']);
+Route::delete('/petugas/delete/{id_pengaduan}', [PetugasController::class, 'destroy']);

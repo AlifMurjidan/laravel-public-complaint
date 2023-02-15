@@ -24,10 +24,10 @@
             <label for="password">Password</label><br>
             <input type="password" name="password"  class="form-control" id="password">
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
             <label for="password_confirm">Konfirmasi Password</label><br>
             <input type="password" name="password_confirm"  class="form-control" id="password_confirm">
-            </div>
+            </div> --}}
             <p style=" float: left;">Belum punya akun ? <a href="" style="color: black;">Daftar</a></p>
               <button class="btn btn-success " name="button" type="submit" style="margin-bottom:12px; width:100px; float: right;" data-toggle="" data-target="">Masuk</button>
         </form>

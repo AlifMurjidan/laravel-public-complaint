@@ -14,8 +14,8 @@
     <form action="/masyarakat/{{$pengaduan->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-            <label for="tgl_pengaduan">Tanggal :</label><br>
-            <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" value="{{$pengaduan->tgl_pengaduan}}"><br>
+            {{-- <label for="tgl_pengaduan">Tanggal :</label><br>
+            <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" value="{{$pengaduan->tgl_pengaduan}}"><br> --}}
             <label for="nik">NIK :</label><br>
             <input type="text" class="form-control" name="nik" id="nik" value="{{$pengaduan->nik}}"><br>
             <label for="laporan">Laporan :</label><br>
@@ -27,13 +27,13 @@
             @else
             <span>Tidak ada foto</span>
             @endif
-            <input type="file" @error('foto') 
+            {{-- <input type="file" @error('foto') 
             @enderror name="foto" id="foto" value="{{$pengaduan->foto}}" width="100"><br>
             @error('foto')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>
-            @enderror
+            @enderror --}}
             <br>
             <button type="submit">Update</button>
         </form>

@@ -31,7 +31,7 @@
             </thead>
             <tbody>
             <tbody>
-                    <?php
+                    {{-- <?php
                             $sql="SELECT * FROM masyarakat";
                             $aksi=mysqli_query($koneksi,$sql);
                             $nomor=1;
@@ -48,7 +48,7 @@
                             echo "</tr>";
                             $nomor++;
                             }
-                    ?>  
+                    ?>   --}}
                     <a href="">Kembali</a> 
                 </tbody>
                 </table>

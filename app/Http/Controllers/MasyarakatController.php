@@ -10,6 +10,12 @@ class MasyarakatController extends Controller
 {
     public function index()
     {
+        return view('masyarakat.dashboard');
+        
+    }
+
+    public function tampilpengaduan()
+    {
         $pengaduan = Pengaduan::all();
         return view('masyarakat.pengaduan', ['pengaduanList' => $pengaduan]);
         // dd($pengaduan);
@@ -71,25 +77,25 @@ class MasyarakatController extends Controller
     {
         $pengaduan = Pengaduan::findOrFail($id);
         // dd($pengaduan);
-        $this->validate($request, [
-            'tgl_pengaduan'     => 'required',
-            'nik'               => 'required',
-            'isi_laporan'       => 'required',
-            'foto'              => 'required|image|mimes:jpeg,png,jpg',
+        // $this->validate($request, [
+        //     'tgl_pengaduan'     => 'required',
+        //     'nik'               => 'required',
+        //     'isi_laporan'       => 'required',
+        //     'foto'              => 'required|image|mimes:jpeg,png,jpg',
             
-        ]);
+        // ]);
 
-        $image = $request->file('foto');
-        $image->storeAs('public/images', $image->hashName());
+        // $image = $request->file('foto');
+        // $image->storeAs('public/images', $image->hashName());
         // $pengaduan->update($request->all());
         $pengaduan->update([
-            'tgl_pengaduan'     => $request->tgl_pengaduan,
+            'tgl_pengaduan'     => date("Y-m-d H:i:s"),
             'nik'               => $request->nik,
             'isi_laporan'       => $request->isi_laporan,
-            'foto'              => $image->hashName()
+            // 'foto'              => $image->hashName()
         ]);
 
-        return redirect()->route('masyarakat.dashboard');
+        return redirect()->route('masyarakat.pengaduan');
     }
 
     public function destroy($id)
