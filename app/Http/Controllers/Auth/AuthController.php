@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Masyarakat;
 use App\Models\User;
+use App\Models\Masyarakat;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -39,6 +40,30 @@ class AuthController extends Controller
          * Redirect ke halaman login
          */
         return redirect()->route('login');
+    }
+
+    public function register_action(Request $request) 
+    {
+        $validate = $request->validate([
+            'nama' => 'required', 
+            'username' => 'required', 
+            'password' => 'required',
+            'telp' => 'required'
+        ]);
+
+        $user = User::create([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'telp' => $request->telp
+        ]);
+
+        Masyarakat::create([
+            'nik' => $request->nik,
+            'user_id' =>  $user->id
+        ]);
+
+        return view('auth.login');
     }
 
     public function authenticate(Request $request)

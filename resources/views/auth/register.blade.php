@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
             <p class=" alert alert-danger">{{ $err }}</p>
             @endforeach
             @endif
-            <form action="{{ route ('register.action')}}" method="POST">
+            <form action="{{ route('register.action')}}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label>NIK :</label>
@@ -44,4 +44,4 @@
         </div>
     </div>
 </body>
-</html> --}}
+</html>

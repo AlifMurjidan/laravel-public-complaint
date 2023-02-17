@@ -9,7 +9,11 @@ class Masyarakat extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'nik';
+    // protected $primaryKey = 'nik';
+    protected $fillable = [
+        'nik',
+        'user_id'
+    ];
 
     // Many to One Relationship
     public function masyarakat()

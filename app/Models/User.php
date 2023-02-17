@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Petugas;
+use App\Models\Masyarakat;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,10 +19,16 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
     protected $fillable = [
-        'name',
-        'email',
+        'nama',
+        'username',
         'password',
+        'telp'
     ];
 
     /**
@@ -42,5 +49,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function masyarakat(): HasOne
+    {
+        return $this->hasOne(Masyarakat::class);
+    }
+
+    public function petugas() 
+    {
+        return $this->haOne(Petugas::class);
+    }
 
 }
