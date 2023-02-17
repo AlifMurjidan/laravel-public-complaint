@@ -65,6 +65,11 @@ Route::delete('/masyarakat/delete/{id_pengaduan}', [MasyarakatController::class,
 // Route Petugas
 Route::get('/petugas/', [PetugasController::class, 'index'])->name('petugas.dashboard');
 Route::get('/petugas/report', [PetugasController::class, 'tampilpengaduan'])->name('petugas.report');
+// Route::get('/cetak_pdf', [PetugasController::class, 'cetak_pdf'])->name('report.pdf');
+Route::get('/petugas/admin', [PetugasController::class, 'tampiladmin'])->name('petugas.admin');
+Route::get('/petugas/masyarakat', [PetugasController::class, 'tampilmasyarakat'])->name('petugas.masyarakat');
 Route::get('/petugas/edit/{id_pengaduan}', [PetugasController::class, 'edit'])->name('petugas.edit');
 Route::put('/petugas/{id_pengaduan}', [PetugasController::class, 'update']);
 Route::delete('/petugas/delete/{id_pengaduan}', [PetugasController::class, 'destroy']);
+Route::delete('/petugas/deleteadmin/{id_petugas}', [PetugasController::class, 'deleteadmin']);
+Route::delete('/petugas/deletemasyarakat/{nik}', [PetugasController::class, 'deletemasyarakat']);

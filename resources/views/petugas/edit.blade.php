@@ -9,7 +9,7 @@
 <body>
     {{-- {{$pengaduan}}; --}}
     <h4 class="display-5 mb-4">UBAH DATA</h4>
-    <a href="/masyarakat/pengaduan" style="color: #000000;">Kembali</a>
+    <a href="/petugas/report" style="color: #000000;">Kembali</a>
           <hr class="heigth: 10px;">
     <form action="/petugas/{{$pengaduan->id}}" method="POST">
         @csrf

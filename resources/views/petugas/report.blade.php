@@ -9,7 +9,7 @@
 <body>
     <h4 class="display-5 mb-4">PENGADUAN</h4>
     <hr class="heigth: 10px;">
-    <a href=""><button class="btn btn-success mb-3" style="width: 120px;" name="button" type="submit"><i class="fas fa-plus mr-1"></i> PDF</button></a>
+    <a href="/cetak_pdf"><button class="btn btn-success mb-3" style="width: 120px;" name="button" type="submit"><i class="fas fa-plus mr-1"></i> PDF</button></a>
         <tbody>
             <h2 class="text-center">DAFTAR PENGADUAN</h2>
             <table class="table">
