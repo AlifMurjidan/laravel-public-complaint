@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Tanggapan;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Masyarakat extends Model
 {
@@ -20,4 +21,5 @@ class Masyarakat extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
 }

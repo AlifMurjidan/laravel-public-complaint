@@ -15,27 +15,27 @@
         @csrf
         @method('PUT')
             <label for="tgl_pengaduan">Tanggal :</label><br>
-            <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" value="{{$pengaduan->tgl_pengaduan}}"><br>
+            <input type="date" class="form-control" name="tgl_pengaduan" id="tgl_pengaduan" value="{{$pengaduan->tgl_pengaduan}}" disabled><br>
             <label for="nik">NIK :</label><br>
-            <input type="text" class="form-control" name="nik" id="nik" value="{{$pengaduan->nik}}"><br>
+            <input type="text" class="form-control" name="nik" id="nik" value="{{$pengaduan->nik}}" disabled><br>
             <label for="laporan">Laporan :</label><br>
-            <input type="text" class="form-control" name="isi_laporan" id="isi_laporan" value="{{$pengaduan->isi_laporan}}"><br>
+            <input type="text" class="form-control" name="isi_laporan" id="isi_laporan" value="{{$pengaduan->isi_laporan}}" disabled><br>
             <label for="foto">Foto :</label><br>
-            <img src="{{ Storage::url('public/images/').$pengaduan->foto }}" class="rounded" style="width: 500px"></td><br>
+            <img src="{{ Storage::url('public/images/').$pengaduan->foto }}" class="rounded" style="width: 500px" disabled></td><br>
             <label for="">Status :</label>
                   <select class="form-control" name="status">
-                    <?php if ($pengaduan['status'] == "0") { ?>
-                        <option selected value="0">Belum Dibaca</option>
-                        <option value="proses">Sedang diproses</option>
-                        <option value="selesai">Selesai diproses</option>
-                    <?php }else if($pengaduan['status'] == "proses") { ?>
-                        <option value="0">Belum Dibaca</option>
-                        <option selected value="proses">Sedang diproses</option>
-                        <option value="selesai">Selesai diproses</option>
+                    <?php if ($pengaduan['status'] == "Belum diproses") { ?>
+                        <option selected value="Belum diproses">Belum Dibaca</option>
+                        <option value="Sedang diproses">Sedang diproses</option>
+                        <option value="Selesai diproses">Selesai diproses</option>
+                    <?php }else if($pengaduan['status'] == "Sedang diproses") { ?>
+                        <option value="Belum diproses">Belum Dibaca</option>
+                        <option selected value="Sedang diproses">Sedang diproses</option>
+                        <option value="Selesai diproses">Selesai diproses</option>
                     <?php }else { ?>
-                        <option value="0">Belum Dibaca</option>
-                        <option value="proses">Sedang diproses</option>
-                        <option selected value="selesai">Selesai diproses</option>
+                        <option value="Belum diproses">Belum Dibaca</option>
+                        <option value="Sedang diproses">Sedang diproses</option>
+                        <option selected value="Selesai diproses">Selesai diproses</option>
                     <?php } ?>
                   </select>
             <br><hr>

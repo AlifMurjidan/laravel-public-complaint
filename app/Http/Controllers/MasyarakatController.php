@@ -16,7 +16,7 @@ class MasyarakatController extends Controller
 
     public function tampilpengaduan()
     {
-        $pengaduan = Pengaduan::all();
+        $pengaduan = Pengaduan::with('tanggapans')->get();
         return view('masyarakat.pengaduan', ['pengaduanList' => $pengaduan]);
         // dd($pengaduan);
     }

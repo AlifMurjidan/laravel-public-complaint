@@ -16,13 +16,14 @@
                 <td>Laporan : <?= $pengaduan->isi_laporan ?></td><br>
                 <td>Foto : </td><br>
                 <td><img src="{{ Storage::url('public/images/').$pengaduan->foto }}" class="rounded" style="width: 1200px"></td><br>
-                <td>Status : <?php if ($pengaduan->status == 0) : ?>
+                <td>Status : <?php if ($pengaduan->status == 'Belum diproses') : ?>
                     Belum diproses
-                <?php elseif ($pengaduan->status == 'proses') : ?>
+                <?php elseif ($pengaduan->status == 'Sedang diproses') : ?>
                     Sedang diproses
-                <?php elseif ($pengaduan->status == 'selesai') : ?>
+                <?php elseif ($pengaduan->status == 'Selesai diproses') : ?>
                     Selesai diproses
                 <?php endif ; ?></td><br>
+                <td>Tanggapan : {{$pengaduan->tanggapans['tanggapan']}}</td><br>
                 <br>
                 <a href="{{ route('masyarakat.edit', $pengaduan->id)}}" style="color :#000000">Edit</a>
                     <hr>

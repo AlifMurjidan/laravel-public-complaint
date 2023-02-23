@@ -7,7 +7,7 @@
     <title>Data Admin</title>
 </head>
 <body>
-    <h4 class="display-5 mb-4">ADMIN</h4>
+    <h4 class="display-5 mb-4">PETUGAS</h4>
     <hr class="heigth: 10px;">
         <tbody>
             <h2 class="text-center">DAFTAR PETUGAS</h2>

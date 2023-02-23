@@ -20,19 +20,21 @@
                 </li>
             </ul>
             </div>
+            <ul class="navbar-nav ml-5">
+                <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}">Log out</a>
+                    </li>
+                </ul>
         </nav>
-    <form action="{{ route('logout') }}" method="post">
         <div class="inner-header" style="padding-top: 150px;">
             <div class="row justify-content-center">
             <div class="card shadow-lg mb-5" style="z-index:20;">
             <div class="card-body" style="color:black">
-            
-            <h1>Layanan Aspirasi dan Pengaduan Online Rakyat</h1><br>
+            <h4>Selamat datang {{Auth::user()->username}}, di Aplikasi Pengaduan Masyarakat</h4><br>
+            <h1>Layanan Aspirasi dan Pengaduan Online Rakyat</h1>
             <h3>Sampaikan laporan Anda langsung kepada <br>instansi pemerintah berwenang</h3>
             @csrf
         <br>
-        <input type="submit" value="Keluar">
-        
             </div>
             </div>
             </div>

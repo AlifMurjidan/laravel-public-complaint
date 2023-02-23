@@ -43,10 +43,17 @@
                     <span class="menu-collapsed">Pengaduan</span>
                 </div>
             </a>
+            <a href="{{ route('logout') }}" class="bg-white list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="menu-collapsed">Log out</span>
+                </div>
+            </a>
             </ul>
     </div>
     <div class="col p-4">
-        <h4 class="display-5 mb-4"><i class="fas fa-tachometer-alt mr-2"></i> DASHBOARD</h4>
+        <h4 class="display-5 mb-4"> DASHBOARD <br>
+            <h6>Selamat datang, {{Auth::user()->username}}</h6></h4>
+            <h5>Anda adalah {{Auth::user()->petugas['level']}}</h5> 
           <hr class="heigth: 10px;">
           <div class="row text-black">
           <div class="shadow-lg p-3 mb-5 ml-4 bg-body rounded"  style="width: 18rem;">
@@ -87,10 +94,6 @@
           
         </div>
     </div><!-- Main Col END -->
-    <form action="{{ route('logout') }}" method="post">
-        @csrf
-        <input type="submit" value="Keluar">
-    </form>
 </div><!-- body-row END -->
 </div>
 </body>

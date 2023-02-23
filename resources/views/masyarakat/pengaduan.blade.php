@@ -31,15 +31,15 @@
                     
                     <td>Tanggal : {{$data->tgl_pengaduan}}</td><br>
                     <td>NIK : {{$data->nik}}</td><br>
-                    <td>Status :  <?php if ($data->status == 0) : ?>
+                    <td>Status :  <?php if ($data->status == 'Belum diproses') : ?>
                         Belum diproses
-                    <?php elseif ($data->status == 'proses') : ?>
+                    <?php elseif ($data->status == 'Sedang diproses') : ?>
                         Sedang diproses
-                    <?php elseif ($data->status == 'selesai') : ?>
+                    <?php elseif ($data->status == 'Selesai diproses') : ?>
                         Selesai diproses
                     <?php endif ; ?>
                     </td><br>
-
+                    <td>Tanggapan : {{$data->tanggapans['tanggapan']}}</td><br>
                     <br>
                     <a href="{{ route('masyarakat.detail', $data->id)}}" style="color :#000000">Detail</a><br>
                     <hr>
