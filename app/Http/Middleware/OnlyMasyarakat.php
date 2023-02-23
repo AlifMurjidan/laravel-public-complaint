@@ -17,10 +17,10 @@ class OnlyMasyarakat
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->masyarakat == true) {
+        if (Auth::user()->masyarakat == true) {
             return $next($request);
        }
 
-       return back()->with('error','Opps, You\'re not Admin');
+       return back();
     }
 }

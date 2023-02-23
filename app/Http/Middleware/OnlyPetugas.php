@@ -17,16 +17,10 @@ class OnlyPetugas
      */
     public function handle(Request $request, Closure $next)
     {
-        //
-        // if (Auth::user()->petugas->user_id != [4,6]) {
-        //     abort(404);
-        //   }
-        //   return $next($request);
-        //  return redirect(‘/’);
-        if (Auth::user() && Auth::user()->petugas == true) {
+        if (Auth::user()->petugas == true) {
             return $next($request);
        }
 
-       return back()->with('error','Opps, You\'re not Admin');
+       return back();
     }
 }
